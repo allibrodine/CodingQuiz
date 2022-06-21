@@ -1,0 +1,43 @@
+body {
+    background-color: black;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 160px;
+    text-shadow: 3px 3px red;
+}
+
+p {
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+button {
+    border: solid 1px white;
+    background-color: red;
+    box-shadow: 0px 3px 5px 0px gray;
+    font-style: bold;
+    font-size: 22px;
+    color: white;
+    position: absolute;
+    left: 46%;
+}
+
+.scores, .time {
+    display: inline-block;
+    color: goldenrod;
+}
+
+.time {
+    float: right;
+    margin-right: 10px;
+}
+
+.scores {
+    margin-left: 10px;
+}
+
