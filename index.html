@@ -14,19 +14,50 @@
     </div>
 
     <div class="time">
-        <h3>Timer</h3>
+        <h3>Timer: <span id="time-left">0</span></h3>
     </div>
 
-    <h1>Coding Quiz</h1>
+    <div class="begin">
+        <h1>Coding Quiz</h1>
 
-    <p>
-        Try to answer the following coding questions correctly within the time limit.
-        An incorrect answer will penalize your time/score by 10 seconds.
-        <br/>
-        Good luck!
-    </p>
+        <p>
+            Try to answer the following coding questions correctly within the time limit.
+            An incorrect answer will penalize your time/score by 10 seconds.
+            <br/>
+            Good luck!
+        </p>
+
+        <button id="start" type="submit">START</button>
+    </div>
     
-    <button type="button">START</button>
+    <div id="question-container" class="hide">
+        <h2 id="question">Question</h2>
+        <div id="answers">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+            <p id="answer-check"></p>
+        </div>
+    </div>
 
+    <div id="your-score">
+        <h3> You did it! Your final score is: <span> .</span></h3>
+        <div id="initials">
+            <input type="text" class="enter-initials" placeholder="Enter your initials">
+            <button type="submit" id="initials-btn">Submit</button>
+        </div>
+    </div>
+
+    <div id="high-scores">
+        <h2>High Scores</h2>
+        <ul></ul>
+        <div id="score-buttons">
+            <button type="submit" id="go-back">Go Back</button>
+            <button type="submit" id="clear">Clear High Scores</button>
+        </div>
+    </div>
+
+    <script src="./assets/script.js"></script>
 </body>
 </html>
