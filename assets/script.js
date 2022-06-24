@@ -2,7 +2,9 @@ const startButton = document.querySelector("#start");
 const questionContainerEl = document.querySelector("#question-container");
 const questionEl = document.querySelector("#question");
 const answerButtons = document.querySelector("#answers");
+const begin = document.querySelector("#begin");
 
+//Array of questions
 const questions = [
 
     { question: "HTML uses _____",
@@ -31,8 +33,30 @@ const questions = [
 
 ];
 
+//Start quiz
 startButton.addEventListener('click', startGame)
 
 function startGame() {
     console.log("started")
+    //hide start screen
+    //begin.classList.add('hide');
+    begin.setAttribute("class", "hide");
 };
+
+//startGame();
+
+//display questions, collect answers
+function displayQuestions() {
+
+}
+
+displayQuestions();
+
+
+//timer
+
+//handle scoring
+
+//display final score
+
+//high scores

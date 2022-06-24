@@ -16,13 +16,13 @@ p {
     margin-right: 20%;
 }
 
-.begin, #question-container, #your-score, #high-scores  {
+#begin, #question-container, #your-score, #high-scores  {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#start, .btn, #initials-btn, #go-back, #clear {
+.btn, #start, #initials-btn, #go-back, #clear {
     border: solid 1px white;
     border-radius: 5px;
     background-color: red;
@@ -54,12 +54,17 @@ p {
 
 .enter-initials {
     height: 30px;
+    border-radius: 5px;
 }
 
-
-/*.hide {
+#question-container, #your-score, #high-scores {
     display: none;
-}*/
+}
 
+.hide {
+    display: none;
+}
 
-
+.start {
+    text-align: center;
+}
