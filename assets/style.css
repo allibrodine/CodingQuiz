@@ -61,10 +61,8 @@ p {
     display: none;
 }
 
-.hide {
+/*didn't work..?
+.hidden {
     display: none;
-}
+}*/
 
-.start {
-    text-align: center;
-}
