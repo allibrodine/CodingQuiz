@@ -16,7 +16,13 @@ p {
     margin-right: 20%;
 }
 
-#begin, #question-container, #your-score, #high-scores  {
+#begin, #your-score, #high-scores  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#question-container {
     display: flex;
     flex-direction: column;
     align-items: center;

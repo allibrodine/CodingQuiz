@@ -41,11 +41,18 @@ const questions = [
 ];
 
 let timerId;
-let remainingTime = 30;
+let remainingTime = 60;
 let questionIndex = 0;
+let score = 0;
 
 //Start quiz
 startButton.addEventListener('click', startGame)
+
+var button = document.getElementsByClassName('btn');
+
+for (var i = 0; i < button.length; i++) {
+    button[i].addEventListener("click", getNextQuestion);
+}
 
 function startGame() {
     console.log("started")
@@ -59,19 +66,47 @@ function startGame() {
     timeLeft.textContent = remainingTime;
 
     //display question container
-    questionContainerEl.style.display = "block";
-    
+    questionContainerEl.style.display = "flex";
+
+       
     //call question
-    getNextQuestion();
-};
-
-function getNextQuestion() {
-
-    //load question
     let currentQuestion = questions[questionIndex];
     questionEl.textContent = currentQuestion.question;
 
-    //load answers
+    let btn1El = document.getElementById("btn1");
+    btn1El.textContent = currentQuestion.answers[0];
+    let btn2El = document.getElementById("btn2");
+    btn2El.textContent = currentQuestion.answers[1];
+    let btn3El = document.getElementById("btn3");
+    btn3El.textContent = currentQuestion.answers[2];
+    let btn4El = document.getElementById("btn4");
+    btn4El.textContent = currentQuestion.answers[3];
+};
+
+function getNextQuestion(event) {
+    
+    console.log(event);
+    
+    //load question
+    let currentQuestion = questions[questionIndex];
+    questionEl.textContent = currentQuestion.question;
+    console.log(currentQuestion);
+    if (event.target.textContent == currentQuestion.correctAnswer) {
+        score += 10;
+        console.log(score);
+    } else {
+        remainingTime -= 5;
+    }
+
+    questionIndex++;
+
+    if (questionIndex == questions.length) {
+        endQuiz();
+    } else {
+
+    currentQuestion = questions[questionIndex];
+    questionEl.textContent = currentQuestion.question;
+    
     let btn1El = document.getElementById("btn1");
     btn1El.textContent = currentQuestion.answers[0];
     let btn2El = document.getElementById("btn2");
@@ -81,11 +116,8 @@ function getNextQuestion() {
     let btn4El = document.getElementById("btn4");
     btn4El.textContent = currentQuestion.answers[3];
 
-    //for loop to cycle through questions
-
-}
-
-//collect answers
+    }; 
+};
 
 
 //timer
@@ -101,10 +133,5 @@ function tick() {
 function endQuiz() {
     timeLeft.textContent = '';
     clearInterval(timeLeft);
+    //hide question container, unhide final score
 }
-
-//handle scoring
-
-//display final score
-
-//high scores
